@@ -1,0 +1,1288 @@
+
+
+   2.3.2   24 Feb 2010
+
+Enhancements
+============
+
+   Added section for flashback information. "Redo / Archives" menu item changed to "Redo / Flashback".
+   Under locks / contends, if a session is locking another session, you can click on that SID, and it will
+   take you directly to the detailed session info for that problem session.
+
+Bug Fixes
+=========
+
+   Deleting scripts within MyOracletool not working, fixed. Thanks to Bryce Tutt for pointing it out.
+
+   2.3   Not released to public 
+
+   No longer testing with oracle 7 / 8 / 9 
+
+Enhancements
+============
+
+   Added section for ASM disk groups / disks
+   Added Bind variable information for SQL in the shared SQL area. (10g)
+   Added datapump job monitor under "Sessions" section (10g).
+   Added more undo / rollback info (Synopsis)
+   Added more temp segment information
+   Enhanced session summary w/refresh
+   Enhanced individual session display, many changes
+   
+Bug Fixes
+=========
+
+   Fixed Redo / Archives section to show archiving info for 10g databases if archiving 
+   is enabled.
+
+   Fixed bug in 10G databases, connected users not highlighted in Schema list area.
+
+
+   2.2   18 Jan 2005
+
+Enhancements
+============
+
+   Added "seconds waiting" column to session summary w/refresh to show how
+   long each session has been waiting on an event.
+
+   Now showing the amount of time the current query has been running in the
+   session summery w/refresh. If the session is active, the time displayed
+   is elapsed since the current statement started. If the session is inactive, 
+   it's the amount of time elapsed since it became inactive.
+
+   Started adding DDL generation back in, now using the Oracle provided
+   DBMS_METADATA package, this will require much less maintenance, and should
+   be less buggy. This is available in 9i only, however..
+
+   Show background session summary on main session page, and the active session
+   count now excludes these processes.
+
+   Added information pertaining to Peoplesoft, if the database contains a Peoplesoft
+   schema. 
+
+   Added latch wait history to Locks / Contends section. Removed session wait info, 
+   that's easy enough to get from the session summary section.
+
+   2.1.1   18 Aug 2003
+
+ Bug fixes
+==========
+
+   Fixed alignment for numeric columns in databse reports.
+
+   Fixed parameter admiistration so it knows whether to quote the value or not.
+   Thanks to William Bourgeois for pointing it out.
+
+   Fixed "describe" command in SQL worksheet to resolve public synonyms and find
+   the object to be described. Thanks to Shyamal Thatte for pointing it out.
+
+   Check for Index Organized tables in all Oracle versions > 7, not just 8.0. Thanks
+   to Karen Schroeder for code contribution.
+
+   Fixed bug in tablespace / datafile fragmentation output in individual tablespace 
+   screen. Thanks to Josian Larcheveque for code contribution.
+
+   Fixed bug when displaying V$SESSION_LONGOPS info in session detailed info screen.
+   It was possible to display info from prior sessions with the same SID.
+
+   OS PID resolving correctly now via topsessions screen.
+
+ Enhancements
+=============
+
+   Finally changed the hideous default theme to a more tolerable one. Hopefully you
+   will like it. It's hard to come up with themes that look nice, and I'm always open
+   for contributions.
+
+   Not exactly an enhancement, but monitoring and DDL generation has been removed, I
+   don't have the time to maintain it.
+
+   Added several parameters to the oracletool.ini file, you might want to update yours.
+
+   Enhanced the search facility slightly, and added a "?" beside the search box will leads
+   to a help screen.
+
+   Added multi-instance reports to database admin section. These reports
+   will be run on each instance that Oracletool has valid connection info
+   for. For example, if you have previously connected to "testdb" and "proddb"
+   then Oracletool can query the connection info from the stored cookie. The
+   report will then show various realtime reports for both databases. It's a 
+   quick way to see common information across instances that you are responsible
+   for.
+
+   Updates to documentation.
+
+   Added hostname to initial screen, > Oracle7.
+
+   OPS-enabled the RMAN monitoring, so all instances will be shown.
+
+   Added logon time to topsessions screen.
+
+   Added additional session_event info to detailed individual session screen.
+
+   Added checks for ORA-1555 errors and tablespace full conditions as pertains
+   to undo segments when using automatic undo management. Oracle9i only.
+
+   When displaying a view, the objects that it depends on will be listed, as well 
+   as the ojects that depend on the view.
+
+   Many changes to MyOracletool. File uploads now possible, search feature, attach
+   files to notes etc. No, there's not an upgrade facility, and the underlying tables
+   have changed. Sorry..
+
+   Probably some other stuff I've forgotten about. It's been a long time since a release,
+   but I'm gonna try to get busy again.
+
+   2.0   Feb 26, 2002
+
+ News
+=====
+
+   This release of Oracletool includes my first crack at
+a database monitoring solution via Oracletool. The Oracletool
+database monitoring framework should be considered BETA in
+this release, and I REALLY need some feedback. I'm not 
+really looking for suggestions as to what to monitor yet, 
+that's the easy part. I need to know what types of problems 
+you ran into when you tried the monitoring so I can update 
+the docs, and make enhancements to the installation. If you
+try the monitoring at all, please let me know. I need to know
+if there is sufficient interest in this to warrant maintaining it.
+
+   Thanks,
+
+     -Adam
+
+ Bug fixes
+==========
+
+   Fixed date format error on RMAN backup listing (SCN's). 
+
+   Fixed bug, looking for MD5 module for encryption, should 
+   be looking for Digest::MD5. Thanks to Rainer Herbst, Marc 
+   Beasley, and the rest of the world for pointing it out.
+
+   Fixed bug with Oracle "i" databases where invalid objects
+   by list would not compile due to missing OBJECT_ID is SQL. 
+   Thanks to Thomas Lowery and Marc Beasley for pointing it out.
+
+   Put the ENCRYPTION_METHOD parameter back into the oracletool.sam.
+   Thanks to Sue Corwin, Matt Brin.
+
+   Fixed bug where Oracletool would loop when it could not 
+   write to the debug / log file. Thanks to Richard Chen. 
+
+   Fixed "Controlfiles" display for Oracle9i. Missing info.
+
+   Fixed "Recent events" display for Oracle9i. Missing info.
+
+   Several changes where 9i databases were not taken into consideration,
+   and information would not be displayed.
+
+ Enhancements
+=============
+
+   Documentation is now in HTML format, and included under the
+   "docs" dirdctory.
+
+   Oracletool database monitoring, BETA release. See docs for
+   more information. 
+
+   Added interface to DBMS_JOB, the Oracle scheduler, under DB admin.
+
+   Database list on connection screen will now show the last database you
+   connected to as the default. Thanks to David Stivers for suggestion.
+
+   Now check for global temporary tables on table listing.
+   Oracle "i" databases only.  Thanks to Sue Corwin for suggestion.
+
+   In table row display, if the number of rows returned is less
+   than the number requested, the heading will print the actual
+   number of rows returned, instead of the number requested. Thanks
+   to Ton 't Lam for suggestion.
+
+   Oracletool will now display a more friendly message when a user
+   without the required privileges logs in. It would error out before.
+   Thanks to Jim Gallagher for the suggestion and code contribution.
+
+   Added option to remove the MyOracletool connection cookie so that
+   you may connect to a different repository or create a new one. Thanks
+   to Attila Szabó for the suggestion.
+
+   Added note repository to MyOracletool section. I use this area to store 
+   Oracle TAR's, config notes, how to cook a baked potato etc.
+
+   Added option to remove the MyOracletool repository completely.
+
+==============================================================================
+
+   1.3.0   Sep 10. 2001
+
+ News
+====
+
+  Oracletool is published! Oracletool was chosen as one of
+the many tools covered in the Oreilly & Assoc. book 
+"Oracle and Open Source" written by Andy Duncan and Sean
+Hull, both of which have open source projects of their own.
+There are links to these projects from the oracletool.com 
+website. Support your Open Source developers and buy this book!
+No, I don't get any money from it, but I got a free book.. :)
+
+ Bug Fixes
+==========
+
+   Fixed bug where list of usernames with active sessions
+was not displaying at all under Netscape when "Session info" 
+menu item selected. 
+
+   Fixed bug within session summary with refresh. It was not 
+displaying sessions which did not have SQL in the V$SQLTEXT
+dynamic performance view associated with them.
+
+   Added comment end tag to javascript code, submitted by many
+people.. Thanks!
+
+   Removed references to ORDER_OBJECT_BY_DEPENDENCY view for 
+Oracle "i" databases, as it does not exist by default anymore.
+Thanks to Svante Sormark for suggestion.
+
+   Several bug fixes to the explain plan section. Not in the way it
+is displayed, but the way it creates the correct PLAN_TABLE based
+on the version of the database.
+
+ Enhancements
+=============
+
+   StatsPack:
+      Added rollback stats to display.
+      Snapshots can be selected via a range of snapshot ID's.
+
+   Table / View / Column comments are now displayed thanks to 
+a code contribution from Praveen Hombaiah.
+
+   Added fragmentation / extent list link to individual tablespace
+ screen.
+
+   Began work on "My Oracletool". This will allow you to store scripts
+and information in a centralized repository for easy access. Suggestions
+please? Constructive criticism? Let me know!
+
+   Many updates to screens pertaining to datafiles, to take TEMPFILES
+into consideration. Also, updates pertaining to temporary tablespaces
+which use TEMPFILES and are managed locally. Most of these changes are 
+transparent unless you have been using these features.
+
+   Added Multi Threaded Server info screen under Perf / Memory section. 
+Thanks to Ernesto Hernandez-Novich for the code contribution.
+
+   Added DB buffer cache info to the memory stats page.
+
+   Added modifiable system parameter admin to the DB admin page. This is
+also a handy way to display which system parameters are modifiable "on the fly".
+
+   Removed ability to select a temporary or undo tablespace as your default
+on the user creation screen. Thanks to Wim Slangewal for suggestion.
+
+   Added state information to index display.
+
+   The following from code contributions from Thomas Lowery. 
+   Thanks Thomas, sorry it took me so long!
+      Added state information to individual index display.
+      Ordered tablespace quotas by tablespace.
+      Ordered table partitions.
+      Check for UNUSABLE objects as well as INVALID objects in areas that pertain.
+
+   Added CPU usage stat from v$sesstat to Session summary area. This pertains to 
+Oracle "i" databases only. Thanks to Sergey Rusakov.
+
+   You may now choose to display detailed session info for all sessions, only active,
+or only not active. Thanks to Sergey Rusakov for suggestion.
+
+   Added display for audit trail counts from individual objects. Shows how many times
+an object has been selected from, inserted to etc.
+
+   More refresh buttons. I like refresh buttons.. :)
+
+Oracle 9.0 specific additions.
+
+   Oracletool will run against Oracle9i databases with no 
+problem. Several enhancements have been made to take advantage
+of new 9i features. Surely many more will come. Suggestions?
+
+   Segment management type added to tablespace listing.
+
+   Updates to Rollback segment areas to take into account "TYPE2 UNDO" objects.
+
+==============================================================================
+
+   1.2.2 Dec 10, 2000
+
+ News
+=====
+
+   Oracletool no longer requires the explicit 
+"SELECT ANY TABLE" privilege to be granted to
+connecting users.
+   Oracletool is written more from a DBA standpoint than 
+developer. In the past, the tool checked for the explicit 
+"SELECT ANY TABLE" privilege upon a user logging in. This 
+is no longer true. But, because Oracletool depends on so 
+many 'DBA%', 'V$%' views, and system level tables, a user 
+needs some degree of authority, albeit select only, on these 
+data dictionary objects.  In order to make the tool available 
+to both DBA and developer, you may want to run the included 
+'create_role.sql' script, which will prompt you for a role 
+name, which will be created, and may be granted to users who 
+are allowed to access data dictionary views, but not rows from 
+all tables in the database (SELECT ANY TABLE). The exception is 
+that it will not grant privileges to any '%LINK%' views or tables, 
+thus preventing said user from obtaining passwords for existing 
+database links. This addition is added based on a suggestion
+and code submission from Sue Corwin. Thanks, Sue.
+
+ Bug fixes
+==========
+
+   mod_perl related change to prevent warnings going to web 
+server error log, thanks to Philipp Jocham.
+
+   Fixed StatsPack display for tablespace I/O stats. Bug appeared
+for tablespaces with multiple datafiles.
+
+ Enhancements
+=============
+
+   The Blowfish method of encryption is now supported. If you
+choose to install the Crypt::Blowfish module, please set the
+"encryption_method" parameter in the oracletool.ini to blowfish.
+An example can be found in the oracletool.sam file. Thanks to
+Troy Engel for this enhancement suggestion.
+
+   Added simple javascript goodie to omit lines from
+hyperlinks. Thanks to Stanley Martin. I'll be curious
+to see if this affects anyone's use. Please let me know
+if it does, as this is the first javascript addition.
+
+   StatsPack: Snapshot range delete now works.
+              Added datafile I/O stats.
+
+   Added session wait information button to session menu
+and performance menu. Both buttons do the same thing. A
+display of wait events and wait times for active sessions 
+is shown.
+
+   Added drop down list of users with sessions in the instance to
+the session menu, for a quick jump to that user's session info.
+
+   Made some changes/additions to the OPS section.
+
+   Added a section for unlocking locked / expired user
+accounts to the user admin section.
+
+   Enhanced session wait information.
+
+   DDL generation for tables is now more flexible. You may
+select whether or not you want constraints, grants, indexes
+etc. generated for given tables.
+
+   Tablespace allocation screen is now sortable by column. 
+
+   Individual tablespace screen will not display all objects
+within the tablespace by default anymore. A button will give
+you the option to display these objects if any exist.
+
+   Added used extent sizes / counts to individual tablespace screen.
+
+   RMAN active backup channels can now be monitored. You may
+do this connected as a normally privileged user such as sys
+or system for an online backup, but for an offline backup
+you must connect via a user identified in an oracle password 
+file created via the "orapwd" command, as the database will
+be in mounted mode during this operation. See Oracle documentation
+for more information on "orapwd".
+
+   Added RedBrick theme, thanks to Rey Hernandez.
+
+==============================================================================
+
+   1.2.0 Jul 05, 2000
+
+   The change list for 1.2.0 is quite lengthy, but there
+are several important points throughout, so please take
+a moment to read through.
+
+ News
+=====
+
+   Sorry folks, but a new oracletool.ini file needs to 
+be installed for this version. I've added a few fields
+to it.
+
+   As of 1.2.0, I believe I need to set a firm line on
+the lowest Oracle version that will be "supported" by
+Oracletool. This version will be 7.3.3. Why? There are
+some changes in the Oracle data dictionary between 7.1
+and 7.3 that have been causing problems for some users, 
+although they have been slight. I just don't have access
+to Oracle versions < 7.3 anymore, which means I can't 
+test on them.
+
+   Encryption is here! As of 1.2.0 cookies can be encrypted
+before they are saved to your PC. I'd like to thank Richard
+Chen for pushing me to do this, and for providing some
+code to make it easier. Please read the SECURITY file
+for more information, and a security advisory which was 
+also provided by Richard Chen.
+
+
+ Bug fixes
+==========
+
+In recent events section, log switch count was inaccurate,
+and is now fixed. Thanks to Alan Sparks for the fix.
+
+Rollback segment screen now checks for rollbacks which are
+not online. Previously these were not shown. Thanks to 
+Pascal Lengard for the info.
+
+Now check DBA_CONS_COLUMNS for primary key constraint
+column names rather than DBA_IND_COLS, as Oracle8 does
+not require a primary key to be created with an index. 
+If a suitable index exists, it will be used. Thanks to
+Klaus-Martin Hansche for the fix. Hope I got your name
+right.. ;)
+
+Fixed a couple of bugs pertaining to foreign keys in table
+DDL generation. Thanks to Hirose Masaaki for the info.
+
+
+ Enhancements: Encryption - Thanks again to Richard Chen
+========================================================
+
+   Usernames and passwords for the database instances you
+access can now be encrypted before they are sent to your
+PC as a cookie. These were being written in plain text
+prior to 1.2.0. There are 3 different levels of security
+available in Oracletool now. These levels will be enabled
+automatically depending on which Perl modules you have 
+installed. To find out what level you are at, click on the
+"About" menu item after installing v1.2.0. Here are the 
+differences between the different levels, and the dependencies
+for each...
+
+Level 0: 
+      This is the level that Oracletool is at prior to v1.2.0.
+   If you are at level 0 then there is no encryption of any
+   kind taking place. If you do not have any of the modules 
+   discussed below installed, this will be your level. The
+   cookie which stores the username and password for the
+   databases you access will be stored in plain text on your PC. 
+
+Level 1: 
+      This level uses the MIME::Base64 method of encoding. With
+   this level, the username, password, and encryption string are
+   encoded into a single string. The encryption string is set in
+   the oracletool.ini, and is MD5 encoded before being added to
+   the string. This level requires the following Perl modules... 
+   These modules are available at
+   CPAN (http://www.cpan.org) and 
+   Activestate (http://www.activestate.com)
+
+1) Digest-MD5
+2) Mime-Base64
+
+Level 2: 
+      This level uses the cipher block chaining mode with
+   the IDEA block cipher, and is extremely secure. It encodes
+   the username and password into a single encrypted string 
+   based on a keyword stored in the oracletool.ini. This level
+   requires the following Perl modules... These modules are 
+   available at CPAN (http://www.cpan.org), but not all are
+   on the Activestate site when I checked prior to this release.
+   This is the only reason that Level 1 encryption exists at all.
+
+1) Digest-MD5
+2) Crypt-IDEA
+3) Crypt-CBC
+
+   If you choose to use these security features, simply install
+the required Perl modules. Oracletool will see the modules and 
+start using them for each subsequent cookie that is created. 
+See your browser documentation if you want to remove the cookies 
+currently on your hard drive.
+
+ Enhancements: General
+======================
+
+On tablespace / datafile fragmentation report, an 
+"ALTER TABLESPACE tablespace_name COALESCE" statement
+will be printed out after the report for any tablespace
+containing at least one datafile with more than 1000
+fragments. This can be cut and pasted into a worksheet. I
+would not recommend using the Oracletool SQL worksheet for
+coalesces, as they can be long running. CGI scripts can 
+time out.
+
+On tablespace information screen, a listing of the different
+extent sizes, and count of each different size of extent
+is listed.
+
+Under the DB Admin menu item, the menu has been split into
+two parts, one for DB Admin type stuff, and one for reports.
+
+Changed extent report under DB Admin to check for objects
+approaching max extents, and also checks each tablespace 
+for objects which cannot allocate a next extent. Thanks to
+Eric Indiogine for idea.
+
+Added a theme called "Printing", which is a black and white
+theme which is good for pages you might want to send to a
+printer. Thanks to David Polansky for the theme. I added a
+few of my own as well, although I don't recommend them.. :).
+Anybody else? Let's see some nice themes!
+
+Added four keywords to each theme definition. You can now
+set a background image for the main page, and a different 
+one for the menu bar, and you can make the table heading
+a different font and color than the cell font.
+
+Explain plan is formatted a bit nicer now, and with more 
+information. Thanks to Lefty Kreouzis for suggestion and
+code change.
+
+Added global object lock information to OPS section.
+
+Added open cursor information to session statistics screen.
+An alert will be shown if the session you are displaying
+has the maximum allowed cursors open (OPEN_CURSORS parameter).
+
+Added additional menu under Performance / memory menu item. This
+has an entry for the display that already existed, and an additional 
+display to show information from the shared SQL area in the SGA. More
+to come later, I think.
+
+Added enhancements to the RMAN section, particularly information
+obtained from the controlfiles pertaining to backups. RMAN menu
+item will show up if your database has been backed up using RMAN,
+or contains one or more RMAN catalogs. The most recent backup info
+can be displayed, and any datafiles added but not yet backed up 
+can be displayed. This section still needs much work. Oracle8 only, 
+More to come later.
+
+Added rollback segment administration to the DB admin menu, for 
+taking segments online, offline, or shrinking.
+
+The Oracle Statistics Package is a new addition to Oracle with 8.1.6
+which is much more powerful than the utlbstat and utlestat scripts.
+I will be adding screens to analyze statspack data in the future. For
+now, I'm checking for the existence of the PERFSTAT.STATSPACK package
+for Oracle 8i databases. A menu item will appear if found. A statspack
+snapshot can be taken via point and click. Like the RMAN section, this
+section still needs much work. More to come later.
+
+Added datafile autoextend info on full datafile listing and listing
+within the individual tablespace screen for Oracle8/8i.
+
+Any object which matches your search via the search box can now be
+marked to display the objects which it depends on and the objects 
+which depend on it. Quite handy, I've found.
+
+Added menu under rollback segment section. One item for showing RBS info,
+one for active or rolling back transaction info. Also enhanced the querys
+which display active and rolling back transactions.
+
+
+   1.04 Apr 26, 2000
+
+ Bug fixes
+==========
+
+Fixed bug where Oracletool selects an invalid column from
+V$INSTANCE on Oracle7 databases.
+
+   1.03 Apr 25, 2000
+
+ Bug fixes
+==========
+
+Fixed bug (again) in Top sessions screen which I had not quite
+fixed in 1.02. oops.
+
+Fixed text contained in tables to show HTML characters correctly
+instead of interpreting them. <FOO> will show correctly now, for
+example, instead of being interpreted as a tag. Thanks to Tommy
+Wareing.
+
+Fixed a couple of bugs pertaining to partitioned table / index
+displays.
+
+ Enhancements
+=============
+
+Added variable for config file, in case you don't want to name it 
+"oracletool.ini", requested by Adrian Blakey. Several mod_perl
+fixes from Adrian as well.
+
+Added sort area info to performance section. Thanks _again_ to
+Tommy Wareing.
+
+OPS page now sorts global sessions by username, and instance names
+are hyperlinks which will connect you to that instance.
+
+Added sortable space report by user option to DBA tasks menu.
+
+Added sortable space report by tablespace / user option to DBA 
+tasks menu.
+
+Added sortable datafile fragmentation report to DBA tasks menu.
+Shows which tablespaces need to be coalesced / reorged.
+
+Added object extent report to DBA tasks menu. You can check for
+objects with a number of extents >= the value you enter.
+
+Added screen for object type "CLUSTER".
+
+On table, view, and source object displays, now check for synonyms 
+pointing to the object.
+
+Started adding screens for databases which have a RMAN recovery
+catalog in them. RMAN button will show up if true. More to come
+later on this. Not much to look at now.
+
+On schema table listing, table types are now split up into sections
+for partitioned , Index Organized, and standard.
+
+On schema index listing, index types are now split up into sections
+for bitmapped, partitioned, Index Organized, and standard.
+
+When you select a role name under the security section, it now also
+shows the users which are granted the role, and the roles which are 
+granted the role.
+
+Added a button for validating an index after one is selected, which 
+will display detailed statistics after the validation. This button
+will only show up if you have the "ANALYZE ANY" privilege. This 
+utilizes the "VALIDATE INDEX" command.
+
+When a table is selected for display, an "Extent mapping" button will 
+show up beside the "Generate DDL" button. This will generate a 
+fragmentation map similar to the tablespace / datafile frag maps,
+but it will only highlight the extents which belong to the table
+you have selected. This is a nice way to get a visual idea of how badly
+a table is fragmented. The extents are shown in alternating blue /
+white, so you can see where each starts and finishes. If the schema
+that you are running the tool as has permission, it will also run
+DBMS_SPACE.UNUSED_SPACE to gather real-time space statistics. Extent
+mapping is not yet supported for partitioned or Index Organized Tables.
+
+Added optional LIMIT_SEARCH parameter to config file, as suggested
+by Mark J. Scheller. Setting this parameter will make the search 
+function skip the part where it checks to see if the matched objects
+are being accessed by any connected sessions. This part of the search
+can be very intensive on instances with many (thousands) of 
+simultaneous connections.
+
+On the main page after you select a schema, the object type 
+"PUBLIC SYNONYMS" will be displayed with the object types owned by the 
+schema. This link will display all public synonyms which point to objects
+owned by the schema you have selected. This will only show up if there 
+are PUBLIC synonyms pointing to the schema. As suggested by Richard
+Chen.
+
+   1.02 Apr 03, 2000   Released without announcement.
+
+Fixed rows which return zeros to show zeros instead of blanks.
+Nulls will still show as blank values. Thanks to Hirosi Taguti 
+for suggestion.
+
+Top sessions screen had a bug in 1.01 which was giving Netscape
+users problems. Fixed, thanks to Tommy Wareing for patch.
+
+On redo log screen, log switch graph now sorts in a way that 
+makes sense. This one had me stumped for a long time. Thanks
+again to Tommy Wareing for the patch.
+
+   1.01 Mar 31, 2000
+
+** Important ** 
+As of 1.00, a config file is required! See entry for v1.00.
+
+Any environmental variable you need to set can now be put in
+the oracletool.ini file, not just the ones that are there by default.
+Some of you (Thanks, Christoph Karl) may need to set additional
+variables like ORA_NLS33, or NLS_LANG, for example. These 
+variables can be placed anywhere in the config file, and should
+follow the same standard as the other parameters.
+...
+Example: NLS_LANG = AMERICAN_AMERICA.WE8ISO8859P1
+Would set $ENV{'NLS_LANG'} = 'AMERICAN_AMERICA.WE8ISO8859P1';
+Simple as that. No quotes, no $'s, just "PARAMETER = VALUE"
+
+Fixed bug in user DDL generation when setting default roles.
+
+Fixed bug in table DDL for foreign key constraint generation.
+Thanks to Stefan Sautter.
+
+Rollback segment screen now shows all transactions on all
+segments. Before you had to choose a segment.
+
+Table display now shows the columns that each index spans.
+
+Enhanced constraint displays on table page to include status, 
+columns, referenced table, owner, and constraint name.
+
+Enhanced sequence display page. No longer have to click on a 
+sequence to get all information.
+
+On table row display, Rows which return space characters will 
+display properly now.
+
+Added global session summary to OPS specific page. Note that
+the OPS menu item does not show up for non OPS instances.
+
+Added session menu, with "Top sessions" selection. Top sessions
+shows all sessions in an instance and has an " auto-refresh"
+button. You can sort on any column by clicking on the column
+heading. You can display all sessions for a given user by clicking
+on the username. You can display an individual session in more 
+detail by clicking on the SID.  You may set AUTO_REFRESH in the 
+oracletool.ini to a value, in seconds, to override the default of 10.
+Note: Sorting on the "SID" column does not work in Oracle 8.1.5
+databases. This is an Oracle bug, not an Oracletool bug.
+
+Oracle8 only: Schema list will highlight in red any accounts 
+which do not have a status of "OPEN".
+
+User info screen will now show account status in Oracle8.
+
+Added tablespace name column to objects shown in "Recent events"
+section.
+
+Working on cleaning up any warnings that should occur for you
+diehard "perl -w" users. Many, but not all are gone. Sorry, I 
+should have done this from the beginning... :(
+
+   1.00 Feb 10, 2000
+
+** Important ** This config file is required now!
+
+Oracletool now comes with a config file. The reason for this
+is so you don't have to set variables at the top of the script
+each time you install a new version. The config file is called
+"oracletool.sam", and should be renamed to oracletool.ini. The
+parameters you need to set have not changed.
+
+Fixed bug in DDL generation from 0.98 which prevented proper 
+display with Netscape.
+
+DDL can now be saved to your local disk, and can no longer be
+saved to the web server disk. Removed safemode ($safemode).
+
+In individual tablespace display page, tablespace_name is now
+a hyperlink which will display DDL for recreating tablespace.
+
+In individual rollback segment display page, segment is now
+a hyperlink which will display DDL for recreating segment.
+
+Added rather extensive facility for setting database auditing
+options. This facility is under "DB Admin", and will not display
+if you do not have auditing enabled. (parameter audit_trail = 'FALSE")
+This facility is not perfect yet, so if any of you are auditing, 
+please give me some feedback.
+
+You may now browse audit trail records. You can get to this under 
+"Security", or under the main auditing menu.
+
+When compiling an invalid object, if the compile is unsuccessful, 
+the errors will now be shown. 
+
+Search box will search for usernames and tablespaces that match
+your entry, as well as object names, "like" object_names, and 
+numeric object ID's.
+
+Removed "Explanation" box at top right of every screen. I don't
+think anyone used it, and it's a pain to maintain. I don't expect
+that anyone will miss it.
+
+Fixed a couple of partitioned table/index display bugs.
+
+   0.99   Skipped
+
+   0.98   Jan 16, 2000
+
+Fixed bug in explain plan query. Thanks to Mark J. Scheller.
+Mark, you're an excellent exterminator, thank you.
+
+Fixed shading problem when displaying some HTML tables with
+multiple columns.
+
+Added "Recent events" section. This shows all users, roles 
+and datafiles added within the last 30 days. Shows objects
+that have been created or altered within the last 24 hours.
+Shows # of redo log switches in the last 24 hours.
+
+Rollback segments section now checks for any transactions in
+the instance that are in an active rollback. Also shows information
+about all transactions occupying the rollbacks of the instance you
+are connected to.
+
+DDL generation will now generate "alter table" statements for tables
+which have foreign keys referencing the table(s) you are generating
+DDL for. So, if you do a "Drop table foobar cascade constraints", this
+will ensure that all referential integrity constraints for that table
+are put in place when it is recreated, including those that reference
+that table.
+
+DDL generation will now extract table and column comments.
+
+DDL generation now checks for CACHE attribute on Oracle8 tables. Thanks
+to Duc Nguyen. Cache attribute is now shown under table info screen as
+well.
+
+Added "$safemode" variable, which disables writing files to the OS for
+DDL generation. Output still goes to screen.
+
+When a shema is selected, if the schema has invalid objects, a button
+will show up at the bottom of the screen showing the number of invalid
+objects. Pressing the button will take you to a display of the objects
+where they can be marked for recompile.
+
+Hyperlinks will now only show up on the entity name they pertain to, 
+not across the whole row of values. Suggested by Hirosi Taguti.
+
+Added "DB Admin" menu item. This is a work in progress, and more will
+be added in the future.. Thanks for the suggestions, keep them coming.
+
+   These menus will activate only if the user logged into the tool has
+   the proper privileges to perform the actions.
+
+   User administration:
+      Reset user passwords.
+      Create users.
+      Create users "like" other user. New user will inherit quotas, 
+          profile, default TS, temp TS, roles, and system privileges 
+          as selected user.
+      Drop users.
+   Session Administration: 
+      Sessions may be marked for kill and killed in batch. Yeah! :) 
+   Object administration
+      Displays a list of invalid objects, which can be marked for recompile.
+   Reverse engineer tables:
+      Multiple table names may be entered for reverse engineering of
+      DDL. An output filename may be entered to send commands to hardcopy.
+      Output will still go to screen as well. Separate section for selecting
+      a particular schema. All tables for the schema will be displayed, and
+      can be marked for erverse engineering.
+   
+   0.97   Dec 08, 1999
+
+Many changes in version 0.97, so let me know if you have
+problems, and I'll get to them as quick as possible. In
+particular, I did some work with the cookies, so let me know 
+if you see anything strange with that.
+
+Nifty new look to Oracletool thanks to a suggestion and code 
+example from David P. Fannin. Thanks David, looks great! I
+think it is safe to say that I took your idea and ran with it!
+
+Oracletool now has color themes which can be chosen interactively,
+and the theme you choose will be used each time you use the tool.
+Because your theme is stored as a cookie on your browser, each
+user of the tool can choose their own theme. Themes can be created
+very easily, and there is an explanation in the "doTheme" subroutine,
+so if you create a cool theme please send me the values, and I'll
+add it to the public version. Most of mine are pretty lame... :(
+The themes can be displayed via a button at the bottom of the 
+"properties" screen.
+
+A "properties" button has been added. This allows you to set 
+defaults that will override the themes. For instance, if you 
+like the "Default1" theme, but the font is too small, you can
+select a larger font in the properties area. If you have a 
+suggestion for something that should be added to the properties
+area, let me know. 
+
+Font is much more consistent throughout the tool.
+
+Continuing down the non read-only path, the session listings
+will now show a button to kill the session if it is active.
+This button will only appear if the user running the tool 
+has "ALTER SYSTEM" privilege.  Also, explain plan button 
+will show up only if there is SQL to run against.
+
+Session listing layout has changed to save browser space.
+
+Changed the datafile fragmentation display again. Took away the 
+hyperlinks. It was too slow, too much bandwidth etc. It's now 
+just a display again, and still without GD.pm.
+
+Fixed a bug where a tablespace would not show up in the allocation 
+graph if it was 100% full. Thanks to Mark J. Scheller for fix.
+
+Now use more updated DBD::Oracle way to fetch LONGS. Thanks to 
+John Williams for fix.
+
+Changed tablespace information listings slightly for Oracle8 and 8i.
+
+Added more detailed tablespace listing to rollback segment area 
+showing info about all tablespaces containing rollback segments.
+Also added optimal size to display.
+
+Added hyperlink on individual user toplevel page. Username is now
+a hyperlink which will generate SQL for recreating the user, setting
+defaults, adding grants etc.
+
+If a package / procedure / view etc. is invalid, when selected an error
+report will display.
+
+Added "Refresh" button to several screens. This can be added to other
+screens very easily as well. Let me know if you want it in other areas.
+
+Many future additions to Oracletool will be non read-only, but the 
+options will show up for use only if the user connected has the authority 
+to do the action, if possible. Having said this, I'm looking for enhancement
+suggestions. What do you want it to do?
+
+Thanks to Alexey Vekshin and Stephane Faroult for suggestions 
+pertaining to this release, and several releases before.
+
+   0.96   Nov 15, 1999
+
+The GD.pm module for creating images is no longer used or required.
+Because of the copyright problems with the GIF format, there are
+two GD.pm versions; One that outputs GIF, and one that outputs PNG.
+The one that outputs PNG can be a hassle to install, so I decided
+to let it go for the time being. I may look at it again in the future. 
+
+Added (rewrote) EXPLAIN PLAN functionality. Now you can run an
+explain plan on any sql shown in the sessions lists, or run
+an explain plan from scratch. The main tool window will connect
+as the owner of the SQL (password is required), while the menu
+will remember who the actual user of the tool is. The username
+and password of the explain plan user will not be stored as a cookie
+on the client side, as the user running the tool is. This means you
+will need to enter a password for each explain plan that you run.
+For those of you that found the hidden explain plan facility before,
+hopefully you will like this one better. Please let me know of any 
+improvements that should be made to this facility.
+
+NOTE: I cannot claim that Oracletool is a 100% READ-ONLY application
+any longer, because during an explain plan..
+
+1) If a PLAN_TABLE does not exist for the user executing the SQL,
+   Oracletool will create it on the fly (and display a message to
+   that effect).
+2) During an explain plan, records will (obviously) be added to the
+   PLAN_TABLE. These records will have a unique identifier, and will
+   be deleted immediately following the explain plan. The PLAN_TABLE
+   will not be removed. 
+
+Changed tablespace / datafile fragmentation displays. No longer is 
+an image created using GD. Instead, an HTML display is generated, and
+each occupied block can be clicked on to display the object which
+resides in that block. This may not look as good as it did with the
+GD image, but is more functional.
+
+Added top CPU users to Perf / memory section. Requires 
+TIMED_STATISTICS = true (which does not produce nearly as much overhead
+as many DBA's would have you think).
+
+Fixed SQL worksheet describe command. Was showing columns for
+all table names that matched, not just one schema.
+
+Updated / added help screens. I doubt anyone ever looks at them 
+anyway.
+
+   0.95   Nov 2, 1999
+
+Oracletool now produces DDL! There is now a "Generate DDL" button 
+which will display when you are viewing table information. When
+you press the button, Oracletool will reverse engineer the create
+table statement, the create index statements, the primary key constraint,
+the check constraints, the unique constraints, the foreign key 
+constraints, and the grants for that table. All of the DDL is produced
+in an easy to read format. This is still Beta, so let me know if you 
+see any inaccuracies.
+
+Fixed session statistics screen to show Oracle8i long operation
+information correctly.
+
+Split object source display into two columns, one with line numbers
+for debug purposes, and one without, for cutting to recreate.
+Thanks to Dianne Scott.
+
+Updated partitioned table screens to support Oracle8i.
+
+Added OS port info to banner. This shows the hardware and Operating
+System the engine is running on. Pretty neat, although not always 
+completely accurate.
+
+Began support for advanced replication (Oracle8 only).
+
+Oracletool will not attempt a connect to the instance unless a valid
+cookie is found. It will prompt for the username/password, and cut
+down on messages in the sqlnet.trc file
+
+Sessions now sorted by status.
+
+   0.94    Oct 10, 1999
+
+Fixed table column display to show proper length and decimal
+precision. Thanks to Phillip Chin.
+
+Added global variable "$gd" to user variables at top of script. 
+Oracletool will only look for the GD.pm module if this is set.
+This is because of the copyright problems going on with libgd.
+GD.pm versions 1.19 and below produce gif images, GD.pm versions
+> 1.19 produce png images.
+
+Changed Oracletool to work with both gif and png versions of GD.pm,
+(hopefully). Please let me know of bugs.
+Thanks to Marcos Colpaert for patch.
+
+Added simple displays for the following object types. INDEXTYPE, 
+JAVA CLASS, JAVA RESOURCE, LIBRARY, OPERATOR, QUEUE.
+
+Added session I/O display to sesion stats section.
+
+Fixed fragmentation image generation caching problem. Thanks to
+Mark J. Scheller.
+
+   0.93   Sep 09, 1999
+
+Emergency release. 0.92 had a bug which prevented proper menu
+display. 
+
+Added V$SESSION_WAIT info to session statistics.
+
+   0.92   Sep 08, 1999
+
+Added controlfile section. Detailed information concerning record
+storage for Oracl8 databases. Quite boring for oracle7 databases.
+
+Added object access list to session statistics page under the 
+"sessions" section.
+
+Added replication section. Buttons will show up only if you are 
+using replication. Separate buttons for master (M) and snapshot (S)
+sections. Those of you using replication, please let me know what 
+needs to be added / enhanced / fixed here. Oracle8 only
+
+All date / time fields now displayed in HH24 format for consistency.
+
+Added enhancement to DisplayTable etc. subroutines to align number
+fields to the right. Looks much nicer. Thanks to Peter Speck.
+
+Fixed bug in Session info for Oracle8i. Looks like we are cool for
+Oracle8i now. Thanks to Marc Beasley
+
+Added additional information to table and index listing. Thanks 
+to Stephane Faroult (http://www.oriolecorp.com)
+
+Added trigger check on detailed table information page. Thanks
+to Stephane Faroult
+
+   0.91   Aug 09, 1999
+
+Added security section - Roles, Profiles, Auditing. Auditing info
+is beta, and unfinished.
+
+Fixed tablespace allocation query. Tablespace information screen
+and allocation graph are both VERY MUCH faster now. This is a very
+positive change for those of you who have many tablespaces, as the
+query is now very quick.
+
+Added archived redo log information section.
+
+SQL-Worksheet now supports DESCRIBE / DESC, but it does not follow
+synonyms as SQL*Plus describe does, or describe packages, procedures
+etc. Does anyone even use the SQL-Worksheet?
+
+Added instance startup date/time to banner. Thanks to Virgil Aviles.
+
+Changed the way SELECT ANY TABLE privileges are checked for.
+
+   0.90   Jul 05, 1999
+
+NOTE: Oracletool.pl now requires the GD.pm module for creating GIF
+images. This is the first release to require this module. GD.pm is 
+a very reliable and easy to install module. It won't take you but
+a few minutes to install it if you don't already have it.
+
+Added datafile fragmentation image generator. When you select a 
+datafile, an image will be generated in addition to all of the 
+information previously displayed. The image will NOT be written to
+disk on your web server. If you want to have a similar map generated 
+when you select a tablespace, uncomment line 1981. I have this commented
+out by default because some databases have such large tablespaces that
+it is just not practical to generate that type of image for them. I'll
+let you make the call on this one. Thanks to Mark J. Scheller for the 
+idea.
+
+You may enter an OBJECT_ID number in the search box instead of a name
+if you need to do such a search.
+
+Added sort information to performance section.
+
+Improved process number resolution in session information area.
+Thanks to Michael Roever.
+
+Fixed TO_CHAR format error in tablespace information area.
+
+Made users profile name a hyperlink for a display of parameters / values.
+
+Added "$dbh->{LongReadLen} = 2048;" to DisplayTable subroutine to correct
+error on tables with LONG columns. Thanks to Mark J. Scheller.
+
+   0.89   May 18, 1999
+
+Added "where clause" text box for when you display 25 rows of a table or view.
+
+Added a checkbox on the database selector for deleting password cookies.
+
+Added an additional text area on the database selector for those who
+are running Oracle Names to type in a connection and let it be resolved 
+by names.
+
+Changes GetTNS subroutine to not truncate domain names from connection
+strings. Many thanks to Dima Dorofeev for the code contribution.
+
+   0.88   May 12, 1999
+
+Added SQL Worksheet. Can be used for both selects, and DML statements.
+
+Added support for partitioned tables and indexes. Oracle8 only, obviously.
+
+Changed the way the script checks for "SELECT ANY TABLE" privilege. This way
+should work better.
+
+Added (somewhat poor) POD documentation.
+
+Took out the hardcoded database name from the search function. Oops. Fixed a couple of 
+other bugs too.
+
+Added "EXPLAIN PLAN" subroutine. This is beta and commented out by default. Eventually, 
+this tool will have a sister tool for users without "SELECT ANY TABLE" privilege. I
+will probably leave explain plan out of this one and add it to that. If you would like to
+try the explain plan, uncomment out line 3663. I'll listen to any suggestions you have, 
+but I'm not sure what I'm gonna do with this one yet.
+
+    0.87   May 05, 1999
+
+Public release to freshmeat.
+
+Made the object list for tablespaces, datafiles, and object search hyperlinks to info screens.
+
+   0.86   May 04, 1999
+
+I've changed the basic look of the tool quite a bit. There's now a persistent menu on the
+left side of the screen for all of the major areas (Tablespaces, Users, Rollbacks etc.).
+
+Added button to show all privileges granted to the selected object.
+
+Added "Performance / memory" area with some of the stuff that was previously under
+the initialization parameters section, and some new stuff including info from the
+V$LIBRARY_CACHE dynamic performance table. If anyone has a performance
+or memory related query that they want to share, please do.
+
+Added query to user info section to show the number of objects the user own of each of
+the different object types.
+
+Made object list entries for tablespaces and datafiles clickable links to additional information
+screens.
+
+Still working on the daemon....
+
+   0.85    April  28, 1999
+
+OK, OK, I heard you! Cookies are here!! No more password file. I just put this in today,
+and have not tested extensively, but it seems to work fine for me. Let me know if any
+of you run into problems using the new password system. I'll add a variable for setting
+the expiration date later.
+
+Updated session info to display sessions whether they are active or inactive. Previously
+displayed only active sessions. Also added "command" column. Handy for seeing if a
+transaction is rolling back, cause that's kinda tricky in Oracle.
+
+Not much else this time because I'm spending alot of time writing a daemon to accompany
+the tool, which will store historical data in the database (disk I/O, growth, session count info
+etc.). I'll probably release that (beta) in about a month or so. It will include some nifty line graphs
+created using GIFgraph (GD). This daemon will be optional, and the tool will work with or
+without it. The added functionality will display automagically if you are running the daemon.
+I will also be looking for help porting it to NT. The tool itsself will remain read-only.
+
+   0.84   March 31,1999
+
+Started adding Oracle Parallel Server specific stuff. Very basic yet. These features will
+display only if you are running OPS.
+
+Added help for every screen. Also quite basic. The help button shows up in the footer of
+each screen.
+
+Fixed ORA-1476 (Divisor is equal to 0) and inaccurate table analyzation information when
+a table that has been analyzed but has no rows is selected.
+
+Changed connection to use 'dbi:DriverName:$database_name' instead of 'old-style'. I guess
+this makes me an old timer..
+
+Added object search capability. Searches database for "like" objects, displays them, and
+sessions currently accessing them. Search box is at the bottom of every page.
+
+Probably a couple of other little things I've forgotten about.
+
+   0.83   March 23,1999
+
+I decided to change the initial screen to use a "submit" button because
+someone reminded me that all browsers do not support Javascript. KDE's 
+file manager, for example. I doubt it would have worked with BeOS's 
+NetPositive browser either.
+
+I also took away the "Back to the page you came from" link on every page. I 
+find I use the "Back" button if I want to go back. Instead, I replaced it with
+two buttons. One to go to the "toplevel", where the users are listed, and on
+to go to the connections screen. (The first page).
+
+Added a report to show all of a users objects split up by the tablespace's
+they reside in. It's a button after a users object types list.
+
+Tested under WinNT4, service pack 4, with IIS4. Worked fine. Added some comments
+in the script pertaining to Win32 users. Stuff they probably already know anyway.
+
+    0.82   March 22,1999
+
+Fixed initial database list to accept entries with dashes.
+
+Added object lock info for non-contending object locks.
+
+Fixed bug for OCI that crashed on an ORA-01005 (null password). Thanks 
+to Kenny Klatt.
+
+Added hyperlink back to the toplevel page for each page.
+
+   0.78 - 0.81   March 20,1999
+
+Fixed tablespace fragmentation query.
+
+Added LAST_DDL_TIME to tablespace object list.
+
+Only display "show active sessions" button if user has active sessions.
+
+User list table now highlights users that are currently connected, and
+   puts users with DBA authority in bold and parenthesis.
+
+Fixed password file update to not use `cp`. Still thinking about whether the
+password file is a good idea or not.
+
+Fixed primary key and column constraint queries to check for object ownership.
+
+Fixed initial database list to take off  '.world'  and weed out duplicates from
+tnsnames.ora and oratab. Thanks to Dmitry Dorofeev.
+
+Added several additional graphs.
+
+Now use well known (except to me) variable ENV{'SCRIPT_NAME'} to get script name
+instead of the stupid way I was doing it before. :-)
+
+   0.78   March 17,1999     Public release to DBI mailing list

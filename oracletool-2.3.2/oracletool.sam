@@ -1,0 +1,467 @@
+#=================================================================================
+#
+#   Configuration file for Oracletool and plugin's.
+#
+#   NOTE: These parameters are not Perl variables. Do not use $'s or quotes.
+#
+#   Copyright (c) 1998-2009 Adam vonNieda
+#
+#   You may distribute under the terms of either the GNU General Public
+#   License or the Artistic License, as specified in the Perl README file,
+#   with the exception that it cannot be placed on a CD-ROM or similar media
+#   for commercial distribution without the prior approval of the author.
+#
+#   This software is provided without warranty of any kind.
+#
+#=================================================================================
+
+# Uncomment and set the (local) ORACLE_HOME environmental variable
+# if neccessary. You may get messages in your web servers error log
+# if this is not set.
+# Win32 users may not need to set this at all.
+
+ ORACLE_HOME = /apps/oracle/product/10/rdbms
+
+# Set the TNS_ADMIN variable if the directory you keep your tnsnames.ora file in
+# is not the default.  Default is $ORACLE_HOME/network/admin
+# You may also want to set this if you want only a subset of
+# your databases accessible from this tool. To do this,
+# you would create a new tnsnames.ora file with only
+# the connections you want, and put that in a non-default
+# directory. Then, set this variable to point to that
+# directory.
+# If your installation uses the default, then you can comment this out.
+#
+# Win32 users: You probably already know this, but your entry should
+# look something like this..
+#
+# TNS_ADMIN = C:\\ORANT\\NETWORK\\ADMIN
+
+ TNS_ADMIN = /apps/oracle/admin/sqlnet
+
+# The following variable is set to expire the username/password cookies
+# after a certain period of time. The default is one year.
+# NOTE: If you are using Internet explorer and are having problems
+# with these cookies, consider upgrading the CGI.pm module to the
+# latest release. It worked for me...
+
+ EXPIRATION = +1y
+
+# The following are all valid examples for the expiration time, and are
+# taken straight out of Lincoln Stein's CGI::Cookie man page.
+
+# +30s                                30 seconds from now
+# +10m                                ten minutes from now
+# +1h                                 one hour from now
+# -1d                                 yesterday (i.e. ASAP!)
+# now                                 immediately
+# +3M                                 in three months
+# +10y                                in ten years time
+# Thursday, 25-Apr-1999 00:40:33 GMT  at the indicated time & date
+
+#=====================================================================
+# All of the parameters from here on are considered strictly optional,
+# and you don't have to set any of them for Oracletool to function.
+# You may want to quickly browse through them to see if any interest
+# you.
+#=====================================================================
+
+# Uncomment the following variable if you are running Oracle names.
+# This will bring up an additional text entry box to enter a names
+# resolved database.
+# This parameter is optional.
+
+# ORACLENAMES = Yep
+
+# Debug?
+# Debug will send information about each subroutine to
+# the log specified below in the "log" parameter. A
+# message will display in the menu column that shows that
+# debugging is turned on. Be sure to set a log file below.
+# This parameter is optional.
+
+# DEBUG = Yep
+
+# Logging?
+# Logging will log the REMOTE_HOST, REMOTE_ADDR, $database
+# $object_type, and $theme to the log specified below in
+# the "log" parameter. A message will display in the menu
+# column that shows that logging is turned on. Be sure to
+# set a log file below.
+# This parameter is optional.
+
+# LOGGING = Yep
+
+# Name of the log file for debug / log messages to be written.
+# Only neccessary if you are in debug or log mode above. If 
+# you uncomment logging and / or debug above, but do not set
+# this parameter, debug and logging will be ignored.
+# This parameter is optional.
+
+# LOG = /tmp/debuglog
+
+# Auto refresh increment for auto-refreshing screens. (seconds)
+# This parameter is optional.
+
+ AUTO_REFRESH = 15
+
+# Schema name for the owner of Statspack objects, if you use it.
+# This parameter is optional, and defaults to PERFSTAT
+
+ STATSPACK_SCHEMA = PERFSTAT
+
+# Limit, in bytes, for file uploads into MyOracletool
+# Note that the perl DBI has to load the file being uploaded
+# completely into memory before insertion into the database.
+# This is not an Oracletool limitation, it's the DBI.
+# This parameter is optional, and defaults to unlimited.
+
+# UPLOAD_LIMIT = 1048576
+
+# This was requested because the search function was taking up too
+# much resources when checking to see whether an object found was 
+# in use by a connected session. This will turn off that portion of
+# the search. You may want to set this if you have a large number
+# (like thousands) of simultaneous connections to your database.
+# This parameter is optional.
+
+# LIMIT_SEARCH = Yep
+
+# As of v1.05, most SQL statements have the Oracletool copyright
+# embedded in them. By commenting this out, that will not happen.
+# This parameter is optional.
+
+# DISPLAY_COPYRIGHT = Yep
+
+# This variable should be set to something other than what this is
+# currently set to. This is the string which will be used to encrypt
+# and decrypt the cookies being sent over the network. Just set it 
+# to something that no one will guess.
+
+ ENCRYPTION_STRING = CHANGEME
+
+# This variable pertains to encryption methods. Currently, IDEA and
+# BLOWFISH are supported, assuming the relevent perl modules are installed.
+
+ ENCRYPTION_METHOD = blowfish
+
+# Description of "Plugin" tools.
+# The value of "plugin" is what will show up in the Oracletool Menu.
+# The value of "program" is the actual name of the program the webserver
+# will look for.  Keep in mind that the pathname you use here must be
+# an absolute or relative pathname to the WEBSERVER, not to the filesystem.
+# Using no pathname will tell the webserver that the plugin is in the
+# same directory as Oracletool. This is the recommended setup.
+# This parameter is optional.
+
+# PLUGIN = Tar tracker
+# PROGRAM = ../tartracker/tartracker.pl
+
+#========================================================================
+# End of user editable section. Only themes from here on.
+# Just ignore the rest of this file unless you are looking
+# to add a theme. If you do add a theme, please send a copy
+# of it to me so I can add it to the distribution.
+#
+# Thanks, and enjoy.
+#
+# Adam vonNieda - adam@oracletool.com
+#========================================================================
+
+# Add themes..
+# Below is a sample theme, with explanations.
+# Do not comment out these parameters. It's OK 
+# for them to be blank, but not commented out.
+# My parsing procedure is not very smart.
+
+      # Theme name.
+      theme            = Default1
+
+      # Short description of theme. This variable is currently not used.
+      description      = Default theme, easy on the eyes.
+
+      # Background color for the pages. This is required even if you
+      # specify a background image. This is so there will be a background
+      # even if the image is not found.
+      bgcolor          = #A8A5BE
+
+      # An image for the menu background. This should be absolute and
+      # will start at your DOCUMENT_ROOT. Optional
+      menuimage        = /background.png
+
+      # An image for the main page background. This should be absolute and
+      # will start at your DOCUMENT_ROOT. Optional
+      bgimage          = /background.png
+
+      # Font color.
+      fontcolor        = #404040
+
+      # Font color for headings
+      headingfontcolor = #404040
+
+      # Font color for warning / informational messages
+      infocolor        = #08296B
+
+      # Color for links (LINK,ALINK,VLINK)
+      linkcolor        = BLUE
+
+      # Font
+      font             = Comic Sans MS
+
+      # Font for headings
+      headingfont      = Comic Sans MS
+
+      # Font size
+      fontsize         = 2
+
+      # Color for table headings
+      headingcolor     = #CCCCFF
+
+      # Color for table cells
+      cellcolor        = #C6E7DE
+
+      # Color for table borders
+      bordercolor      = #555555
+
+# End sample theme
+
+      theme            = Default
+      description      = Default theme
+      bgcolor          = #EAE2BB
+      menuimage        = 
+      bgimage          = 
+      fontcolor        = #5B110B
+      headingfontcolor = #5B110B
+      infocolor        = #5B110B
+      linkcolor        = #A01D0E
+      font             = pasteris
+      headingfont      = pasteris
+      fontsize         = 2
+      headingcolor     = #DEC86F
+      cellcolor        = #DBD099
+      bordercolor      = #550055
+
+      theme            = Default2
+      description      = Similar to default1, larger font.
+      bgcolor          = #A8A5BE
+      menuimage        = /background.png
+      bgimage          = /background.png
+      fontcolor        = #404040
+      headingfontcolor = #7F0F7F
+      infocolor        = #08296B
+      linkcolor        = BLUE
+      font             = Comic Sans MS
+      headingfont      = Comic Sans MS
+      fontsize         = 3
+      headingcolor     = #CCCCFF
+      cellcolor        = #C6E7DE
+      bordercolor      = #555555
+
+      theme            = Windows95
+      description      = Windows 95
+      bgcolor          = #008080
+      menuimage        = /im/lightblue3.jpg
+      bgimage          = /im/lightblue3.jpg
+      fontcolor        = BLACK
+      headingfontcolor = WHITE
+      infocolor        = #08296B
+      linkcolor        = BLACK
+      font             = Comic Sans MS
+      headingfont      = Comic Sans MS
+      fontsize         = 2
+      headingcolor     = #000080
+      cellcolor        = #C0C0C0
+      bordercolor      = #606060
+
+      theme            = Printing
+      description      = For printing
+      bgcolor          = #FFFFFF
+      menuimage        =
+      bgimage          =
+      fontcolor        = #404040
+      headingfontcolor = #404040
+      infocolor        = #FFFFFF
+      linkcolor        = BLUE
+      font             = pasteris
+      headingfont      = pasteris
+      fontsize         = 2
+      headingcolor     = #FFFFFF
+      cellcolor        = #FFFFFF
+      bordercolor      = #555555
+
+      theme            = Slashdot
+      description      = Clone of Slashdot.org
+      bgcolor          = WHITE
+      menuimage        =
+      bgimage          = 
+      fontcolor        = BLACK
+      headingfontcolor = WHITE
+      infocolor        = #006666
+      linkcolor        = #006666
+      font             = pasteris
+      headingfont      = pasteris
+      fontsize         = 2
+      headingcolor     = #006666
+      cellcolor        = #CCCCCC
+      bordercolor      = #008888
+
+      theme            = ActiveState
+      description      = Clone of ActiveState.com
+      bgcolor          = #EAE2BB
+      menuimage        =
+      bgimage          = 
+      fontcolor        = #B82619
+      headingfontcolor = #404040
+      infocolor        = #B82619
+      linkcolor        = #B82619
+      font             = pasteris
+      headingfont      = pasteris
+      fontsize         = 2
+      headingcolor     = #C2B266
+      cellcolor        = #EAE2BB
+      bordercolor      = #000000
+
+      theme            = PayMyBills
+      description      = Clone of PayMyBills.com
+      bgcolor          = #FFFFFF
+      menuimage        =
+      bgimage          = 
+      fontcolor        = #215AA5
+      headingfontcolor = #404040
+      infocolor        = #215AA5
+      linkcolor        = #215AA5
+      font             = Bookman Old Style
+      headingfont      = pasteris
+      fontsize         = 2
+      headingcolor     = #C2CDE1
+      cellcolor        = #EAEAEA
+      bordercolor      = #215AA5
+
+      theme            = PayMyBills2
+      description      = Mod of PayMyBills theme
+      bgcolor          = #FFFFD8
+      menuimage        =
+      bgimage          = 
+      fontcolor        = #000000
+      headingfontcolor = #006000
+      infocolor        = #800080
+      linkcolor        = #0000FF
+      font             = Bookman Old Style
+      headingfont      = pasteris
+      fontsize         = 2
+      headingcolor     = #C2CDE1
+      cellcolor        = #EAEAEA
+      bordercolor      = #215AA5
+
+      theme            = Overcast
+      description      = Gray cloudy day
+      bgcolor          = #999999
+      menuimage        =
+      bgimage          = 
+      fontcolor        = #333333
+      headingfontcolor = #404040
+      infocolor        = #333333
+      linkcolor        = #333333
+      font             = Comic Sans MS
+      headingfont      = pasteris
+      fontsize         = 3
+      headingcolor     = #888888
+      cellcolor        = #D8D8D8
+      bordercolor      = #333333
+
+      theme            = Military
+      description      = 8 years in the US Marines. I had to do it.
+      bgcolor          = #669966
+      menuimage        = /im/tan_paper.gif
+      bgimage          = /im/tan_paper.gif
+      fontcolor        = BLACK
+      headingfontcolor = #669966
+      infocolor        = BLACK
+      linkcolor        = BLACK
+      font             = 
+      headingfont      = 
+      fontsize         = 3
+      headingcolor     = #666633
+      cellcolor        = #FFCC99
+      bordercolor      = BLACK
+
+      theme            = Pain
+      description      = Red and yellow. Aaack!
+      bgcolor          = #FFFFC6
+      menuimage        =
+      bgimage          =
+      fontcolor        = #FF0000
+      headingfontcolor = #404040
+      infocolor        = #FF6342
+      linkcolor        = RED
+      font             = Century Gothic
+      headingfont      = pasteris
+      fontsize         = 3
+      headingcolor     = #FFC6A5
+      cellcolor        = #FFFF9C
+      bordercolor      = #FF3118
+
+      theme            = Pastel
+      description      = Pastel colors.
+      bgcolor          = #DEBDDE
+      menuimage        = /im/lightpink.jpg
+      bgimage          = /im/lightpink.jpg
+      fontcolor        = #212121
+      headingfontcolor = #404040
+      infocolor        = #212121
+      linkcolor        = #212121
+      font             = Brush 445 BT
+      headingfont      = pasteris
+      fontsize         = 3
+      headingcolor     = #FFFFC6
+      cellcolor        = #C6EFF7
+      bordercolor      = #555555
+
+      theme            = TheBlues
+      description      = Lotsa blue.
+      bgcolor          = #36648B
+      menuimage        =
+      bgimage          =
+      fontcolor        = #000033
+      headingfontcolor = #404040
+      infocolor        = #000033
+      linkcolor        = #000066
+      font             = 
+      headingfont      = pasteris
+      fontsize         = 3
+      headingcolor     = #1C86EE
+      cellcolor        = #66CCFF
+      bordercolor      = #333399
+
+      theme            = Windows31
+      description      = Old windows
+      bgcolor          = WHITE
+      menuimage        =
+      bgimage          =
+      fontcolor        = BLACK
+      headingfontcolor = #404040
+      infocolor        = BLACK
+      linkcolor        = BLACK
+      font             = 
+      headingfont      = pasteris
+      fontsize         = 3
+      headingcolor     = YELLOW
+      cellcolor        = WHITE
+      bordercolor      = BLUE
+
+      theme            = RedBrick
+      description      = Red Theme based on Windows Brick
+      bgcolor          = #420000
+      menuimage        =
+      bgimage          =
+      fontcolor        = #FFFFFF
+      headingfontcolor = #E1E0D2
+      infocolor        = #FF0000
+      linkcolor        = #666666
+      font             =
+      headingfont      = pasteris
+      fontsize         = 3
+      headingcolor     = #800000
+      cellcolor        = #C2BFA5
+      bordercolor      = #E6E6D7
+

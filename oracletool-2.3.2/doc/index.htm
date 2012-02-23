@@ -1,0 +1,922 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:w="urn:schemas-microsoft-com:office:word"
+ xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <meta name="ProgId" content="Word.Document">
+  <meta name="Generator" content="Microsoft Word 9">
+  <meta name="Originator" content="Microsoft Word 9">
+  <link rel="File-List" href="./index_files/filelist.xml">
+  <title>Oracletool v2</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Adam vonNieda</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Adam vonNieda</o:LastAuthor>
+  <o:Revision>37</o:Revision>
+  <o:TotalTime>489</o:TotalTime>
+  <o:Created>2002-02-20T10:28:00Z</o:Created>
+  <o:LastSaved>2002-03-11T22:58:00Z</o:LastSaved>
+  <o:Pages>10</o:Pages>
+  <o:Words>4763</o:Words>
+  <o:Characters>27153</o:Characters>
+  <o:Lines>226</o:Lines>
+  <o:Paragraphs>54</o:Paragraphs>
+  <o:CharactersWithSpaces>33345</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+  <style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	font-weight:bold;}
+h2
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:1158761759;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1634610692 1357254844 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:45.0pt;
+	mso-level-number-position:left;
+	margin-left:45.0pt;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+  </style>
+</head>
+<body style="" link="blue" lang="EN-US" vlink="purple">
+<div class="Section1">
+<p class="MsoNormal"><o:p></o:p></p>
+<h1>Oracletool documentation</h1>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Note that the
+most
+recent version of this document can be found <a
+ href="http://www.oracletool.com/docs/index.htm">here</a>.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a href="#_Introduction_to_Oracletool:">Introduction</a></h2>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_The_standard_disclaimer,">The standard disclaimer</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Copyright">Copyright</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Overview">Overview</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_FAQ:_Frequently_Asked">Frequently Asked Questions</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a
+ href="#_Q:_What_versions">What versions of Oracle will Oracletool work
+with?</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a
+ href="#_Q:_Does_Oracletool">Does Oracletool work with Windows NT as
+the web
+server?</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a
+ href="#_Q:_Does_the">Does the web server need to be running on the
+machine that
+Oracletool is installed on?</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a
+ href="#_Q:_Can_Oracletool">Can Oracletool connect to databases on
+other
+machines?</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a
+ href="#_Q:_Can%27t_you">Can't you make Oracletool look nicer? Why
+aren't there
+any graphics?</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a
+ href="#_Q:_I%92m_getting">I&rsquo;m getting the following error (or a
+similar error)..
+Can't load
+'/usr/lib/perl5/site_perl/5.6.0/i386-linux/auto/DBD/Oracle/Oracle.so'</a></p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a href="#_Oracletool_installation:">Installation</a></h2>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Requirements">Requirements</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Privileges_for_the">Required privileges for a connecting user</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Installation:_The_short">The short version, if you already
+have the DBI
+and DBD::Oracle Perl modules installed</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Installation:_The_long">The long version, if the above does
+not
+pertain..</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_The_oracletool.ini_file.">Setting parameters in the
+oracletool.ini file</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Executing_Oracletool_for">Executing Oracletool for the first
+time.</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Troubleshooting_Oracletool_installation">Troubleshooting
+Oracletool
+installation problems</a></p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a href="#_Oracletool_and_security">Security</a></h2>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Q:_What_are">What are cookies?</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Q:_Where_do">Where do they come from?</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Q:_Are_cookies">Are cookies secure?</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="#_Oracletool_cookie_encryption">Oracletool cookie encryption</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a
+ href="#_Level_0:">Level 0</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a
+ href="#_Level_1:">Level 1</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a
+ href="#_Level_2:">Level 2</a></p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Introduction_to_Oracletool:"></a>Introduction to
+Oracletool:<span style="font-weight: normal;"><o:p></o:p></span></h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_The_standard_disclaimer,"></a><span style="">&nbsp;&nbsp;
+</span>The standard disclaimer...</h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Oracletool is
+provided as is, without warranty of any kind. The author takes no
+responsibility for events which may be caused by the use or misuse of
+this
+software.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Copyright"></a><span style="">&nbsp;&nbsp;
+</span>Copyright</h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Copyright (c)
+1998
+&ndash; 2009 Adam vonNieda, Kansas USA</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>You may
+distribute
+under the terms of either the GNU General Public License or the
+Artistic
+License, as specified in the Perl README file, with the exception that
+it
+cannot be placed on a CD-ROM or similar media for commercial
+distribution
+without the prior approval of the author.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Overview"></a><span style="">&nbsp;&nbsp; </span>Overview</h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Oracletool can
+be
+a challenge to install the first time, especially if you are not
+familiar with
+how web based apps, particularly CGI, work. So why bother? Well, once
+installed, Oracletool can be a very handy addition to your toolbox.
+Most tools
+limit you to your personal workstation, meaning that&rsquo;s where they
+are
+installed. If you have to leave your desk to work a problem, your tools
+stay
+there. Because Oracletool is server based, it doesn&rsquo;t matter
+where you are; If
+you have a web browser, you can connect to Oracletool and use it to
+help you
+debug problems. Also, while Oracletool may be challenging to some on
+the first
+installation, that&rsquo;s the only one you have to do. Oracletool is
+installed once,
+in one place, and everyone who can access your web server (and has the
+proper
+Oracle accounts) can use it from that point. In addition, any scripts
+or
+information you store in &ldquo;MyOracletool&rdquo; are accessible from
+anywhere. The fact
+that Oracletool is not client based is one of its greatest strengths,
+and
+that&rsquo;s why it&rsquo;s written this way.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Oracletool is
+written more from a DBA standpoint than developer. In the past, the
+tool
+checked for the explicit "SELECT ANY TABLE" privilege upon a user
+logging in. This is no longer true. But, because Oracletool depends on
+so many
+'DBA%', 'V$%' views, and system level tables, a user needs some degree
+of
+authority, albeit select only, on these data dictionary objects. In
+order to
+make the tool available to both DBA and developer, you may want to run
+the included
+'create_role.sql' script, which will prompt you for a role name, which
+will be
+created, and may be granted to users who are allowed to access data
+dictionary
+views, but not rows from all tables in the database (SELECT ANY TABLE).
+The
+exception is that it will not grant privileges to any '%LINK%' views or
+tables,
+thus preventing said user from obtaining passwords for existing
+database links.
+Having said this, Oracletool is targeted more to the Oracle DBA than
+the
+developer, and always will be. </p>
+<p class="MsoNormal"><span style="">&nbsp;</span></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+ style="">&nbsp;</span>There are better tools than Oracletool for
+developers. As a DBA, however, after learning about all of the sections
+within
+Oracletool, you will be pleasantly surprised at just how handy it can
+be. </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Oracletool has
+functionality that may not be readily apparent until you use it on a
+variety of
+databases. If a particular function is not configured on your database,
+you
+will not see menu items for it. Here are some examples..</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Symbol;"><span style="">&middot;</span></span>
+If
+your database is not RAC, that section will not appear.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Symbol;"><span style="">&middot;</span></span>
+If
+you are not using replication, it will not appear.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Symbol;"><span style="">&middot;</span></span>
+If
+your database is not backed up via RMAN, that will not appear.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Symbol;"><span style="">&middot;</span></span>
+You
+will only see RMAN catalog repository information if you are connected
+to a
+database where a catalog exists.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+ style="">&nbsp;&nbsp;</span><span style="font-family: Symbol;"><span
+ style="">&middot;</span></span> You will not see Oracle statspack
+information unless
+it&rsquo;s being used.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_FAQ:_Frequently_Asked"></a><span style="">&nbsp;&nbsp;
+</span>FAQ: Frequently Asked Questions..<span
+ style="font-weight: normal;"><o:p></o:p></span></h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Q:_What_versions"></a>Q: What versions of Oracle will
+Oracletool
+work with?</h2>
+<p class="MsoNormal"><b>A</b>: All versions 7.3 and above. As of 2.3,
+only 10g and above are "supported".</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Q:_Does_Oracletool"></a><span style="font-weight: normal;">Q</span>:
+Does Oracletool work with Windows NT as the web server?</h2>
+<p class="MsoNormal">A: Yes. In fact, using Activestate Perl (<a
+ href="http://www.activestate.com/">http://www.activestate.com</a>) and
+the Perl
+Package Manager, DBI and DBD::Oracle are very easy to install on
+Windows
+platforms.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Q:_Does_the"></a><span style="font-weight: normal;">Q</span>:
+Does
+the web server need to be running on the machine that Oracletool is
+installed
+on?</h2>
+<p class="MsoNormal"><b>A</b>: Yes. Oracletool, Perl (with required
+modules), and
+web server must all be on the same machine.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Q:_Can_Oracletool"></a><span style="font-weight: normal;">Q</span>:
+Can Oracletool connect to databases on other machines?</h2>
+<p class="MsoNormal"><b>A</b>: Yes, Oracletool only needs to be
+installed in one
+place, and all of your users can use it to connect to all of your
+Oracle
+databases.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Q:_Can't_you"></a><span style="font-weight: normal;">Q</span>:
+Can't you make Oracletool look nicer? Why aren't there any graphics?</h2>
+<p class="MsoNormal"><b>A</b>: Oracletool is designed to get the job
+done in the
+easiest way possible. I&rsquo;ve not found a good reason to bloat it
+with graphics.
+You can set the background image for your theme in the <a
+ href="#_The_oracletool.ini_file.">oracletool.ini</a> file, however.
+There are
+several "themes" to choose from to make the tool more to your
+preferences as far as colors etc.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Q:_I&rsquo;m_getting"></a><span style="font-weight: normal;">Q</span>:
+I&rsquo;m getting the following error (or a similar error).. Can't load
+'/usr/lib/perl5/site_perl/5.6.0/i386-linux/auto/DBD/Oracle/Oracle.so'
+for
+module DBD::Oracle: libclntsh.so.9.0: cannot open shared object file:
+No such
+file or directory at /usr/lib/perl5/5.6.0/i386-linux/DynaLoader.pm</h2>
+<p class="MsoNormal"><b><span style="color: black;">A</span></b><span
+ style="color: black;">: This is generally a permissions problem. Most
+likely your
+web server cannot access the libraries it needs to in order to load the
+DBD::Oracle module. There is a more detailed explanation <a
+ href="#_What_if_it">here</a>.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="color: black;"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></p>
+<p style="margin: 0in 0in 0.0001pt;"><o:p></o:p></p>
+<h2><a name="_Oracletool_installation:"></a>Oracletool installation:</h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Requirements"></a><span style="">&nbsp;&nbsp;
+</span>Requirements</h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="http://www.perl.com/CPAN/src/stable.tar.gz">Perl v5.004 or
+greater.</a> </p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="http://www.cpan.org/modules/by-authors/Tim_Bunce/">DBI v1.12 or
+greater.</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="http://www.cpan.org/modules/by-authors/Tim_Bunce/">DBD::Oracle
+v1.02 or
+greater.</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+ style="">Please go to <a
+ href="http://www.symbolstone.org/technology/perl/DBI/">symbolstone.org</a>
+for
+more information about installing / using the DBI and DBD::Oracle
+modules.</span></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>A web server
+that
+allows CGI. I use the <a href="http://www.apache.org/">Apache</a> web
+server, and
+so do millions of others.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Privileges_for_the"></a><span style="">&nbsp;&nbsp;
+</span>Privileges for the connecting user</h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>The user that
+you
+choose to connect to each of the databases you use Oralcetool with
+needs to
+have authority to see the underlying data dictionary views, and of
+course
+permission to connect to the database. Granting &ldquo;CREATE
+SESSION&rdquo; to these users
+will fill the connecting requirement, and granting the following
+privileges
+will allow the user to select the data dictionary views.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Oracle7,
+Oracle8,
+Oracle8i:<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>SELECT ANY TABLE</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Oracle9i<span
+ style=""> and &gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>SELECT
+ANY TABLE, SELECT ANY DICTIONARY</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Granting the
+privileges above will give you the capability to see all of the
+information
+that Oracletool selects from the database. It does not give you
+permission to use
+the DBA functions of Oracletool. You may or may not want to grant the
+DBA role
+to your connecting user. </p>
+<p class="MsoNormal"><span style=""><span style="">&nbsp;&nbsp; </span><o:p></o:p></span></p>
+<h2><a name="_Installation:_The_short"></a><span style="">&nbsp;&nbsp;
+</span>Installation: The short version.</h2>
+<p class="MsoNormal"><b><span style=""><o:p></o:p></span></b></p>
+<p style="margin: 0in 0in 0.0001pt;"><span style="">&nbsp;&nbsp;
+</span>Instructions for those who already have DBI and DBD::Oracle</p>
+<p class="MsoNormal">compiled into their perl. </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>1) Copy
+oracletool.pl
+to your CGI directory.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>2) Copy
+oracletool.sam to oracletool.ini, in the same</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>directory
+as
+Oracletool.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>3) Set a few
+parameters at the top of the ini file.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>4) Set the
+path to
+perl correctly at the top of oracletool.pl</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>5) Execute it
+like
+so... </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>http://yourhost/yourcgidir/oracletool.pl</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Installation:_The_long"></a><span style="">&nbsp;&nbsp;
+</span>Installation: The long version.</h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Installation
+of
+Oracletool is pretty straightforward, especially if you have<span
+ style="">&nbsp; </span>installed stuff on your web server before.
+The main thing is that you need to have the DBI and DBD::Oracle modules
+compiled into your Perl BEFORE you attempt to install Oracletool. These
+instructions will assume that you have already done so. If you have not
+done
+that yet, download the required Perl modules and follow the
+instructions to
+install them. I have compiled the DBI and DBD::Oracle modules many
+times and
+have had very few problems. If you do encounter problems with DBI or
+the
+DBD::Oracle module, there are mailing lists devoted to the subject,
+please use them.&nbsp; </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>OK, let's get
+to
+it! At this point, you should have a recent version of Perl with the
+DBI and
+DBD::Oracle modules compiled in and tested. You also have a functional
+web
+server in place, right? If not, back up and come back here when you've
+got
+those things in place. Download Oracletool if you have not already. </p>
+<p class="MsoNormal"><a name="_CGI_permissions"></a><o:p></o:p></p>
+<p class="MsoNormal"><b>Make sure you change this to the path to your
+perl binary
+with<o:p></o:p></b></p>
+<p class="MsoNormal"><b>DBI and DBD::Oracle compiled in!<span style="">&nbsp;
+</span>AND make sure you do a chmod<o:p></o:p></b></p>
+<p class="MsoNormal"><b>755 oracletool.pl !!</b><span style="">&nbsp;
+</span></p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><b>#!/usr/bin/perl <o:p></o:p></b></p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal">OK, on to the less obvious stuff </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_The_oracletool.ini_file."></a><span style="">&nbsp;&nbsp;
+</span>The oracletool.ini file. </h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal">Copy oracletool.sam to oracletool.ini, and put it
+in the
+same directory as oracletool.pl. </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p style="margin: 0in 0in 0.0001pt;">There are several variables in
+oracletool.ini that may need to be set. These are at the very top of
+the script
+and there is an explanation of each variable above it.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal">You will see a section at the top of the
+oracletool.ini that
+looks like this... </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal">#=============================================================================
+</p>
+<p class="MsoNormal"># Begin user editable section. You may need to
+change some
+things in this</p>
+<p class="MsoNormal"># section </p>
+<p class="MsoNormal">#=============================================================================
+</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+first
+variable you may want to set is for your $ORACLE_HOME. </p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Set
+this in the
+line that looks like this.</p>
+<p class="MsoNormal"><span style="">&nbsp;</span></p>
+<p class="MsoNormal"><span style="">&nbsp;</span>ORACLE_HOME =
+/apps/oracle/product/10.2</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp; </span><span
+ style="">&nbsp;&nbsp;</span>Next, set your $TNS_ADMIN variable, if you
+use one that is not default. </p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+default is
+$ORACLE_HOME/network/admin.</p>
+<p class="MsoNormal"><span style="">&nbsp;</span></p>
+<p class="MsoNormal"><span style="">&nbsp;</span>TNS_ADMIN =
+/home/oracle/admin/sqlnet</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The rest of
+the variables in this section are self explanatory, and you </p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>can mess with
+them if you choose to. The default colors work OK for</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>me. </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>When you see
+the following... </p>
+<p class="MsoNormal">#========================================================================
+</p>
+<p class="MsoNormal"># End user editable section. Do not edit below
+this point. </p>
+<p class="MsoNormal">#========================================================================
+</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal">Then you're almost ready to go!.<span style="">&nbsp;&nbsp;
+</span></p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Copy
+oracletool.pl
+to a directory that is defined to the web server as a<span style="">&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="MsoNormal">cgi directory. For instance, under Redhat Linux,
+the default
+CGI directory</p>
+<p class="MsoNormal">is /home/httpd/cgi-bin.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Executing_Oracletool_for"></a><span style="">&nbsp;&nbsp;
+</span>Executing Oracletool for the first time.</h2>
+<p class="MsoNormal"><span style="">&nbsp;</span></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Make sure that
+oracletool.pl is executable by the web server, meaning that, </p>
+<p class="MsoNormal">the web server may not run as the same user id
+that
+installed oracletool.pl.</p>
+<p class="MsoNormal">Doing a chmod 755 oracletool.pl is safe. There is
+no info
+stored in the script</p>
+<p class="MsoNormal">that people shouldn't see for any reason. When you
+are
+finished with all of the </p>
+<p class="MsoNormal">above, you should be able to execute oracletool.pl
+by
+putting something like the</p>
+<p class="MsoNormal">following into your browser address window. Let's
+assume
+that your web server </p>
+<p class="MsoNormal">is named 'webserver' and that you copied
+oracletool.pl into
+the default CGI </p>
+<p class="MsoNormal">directory on your web server.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal">http://webserver/cgi-bin/oracletool.pl </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>And you should
+get
+back a window with entries from your tnsnames.ora file in a drop down
+list. </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>If you have
+problems, I can be reached at <a href="mailto:adam@oracletool.com">adam@oracletool.com</a>,
+but please read the following first..</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_What_if_it"></a><a
+ name="_Troubleshooting_Oracletool_installation"></a><span style="">&nbsp;&nbsp;
+</span>Troubleshooting Oracletool installation
+problems.</h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>It&rsquo;s
+important to
+understand the way Oracletool will be executed by the web server. The
+web
+server is executing at the OS level as a user that is probably not the
+same
+user that installed Oracletool. For instance, if you log into a UNIX
+server as
+&ldquo;adam&rdquo;, and put the oracletool.pl and oracletool.ini files
+into your web
+servers CGI directory, say. &ldquo;/var/www/cgi-bin&rdquo;, those files
+may be owned by
+you. That&rsquo;s fine, but they will be executed by the user that the
+web server
+runs as. This user is often named &ldquo;nobody&rdquo;, or
+&ldquo;apache&rdquo;, or something else, but
+it is likely NOT running as &ldquo;adam&rdquo;. So, you need to make
+sure that &ldquo;apache&rdquo;,
+for instance, has permission not only to read oracletool.ini, and
+execute
+oracletool.pl, but also to access the required Oracle libraries that
+are installed
+on the server which make DBD::Oracle use possible.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>If you have
+done
+all the prerequisites prior to executing Oracletool and are still
+having
+problems, try running the &ldquo;example.cgi&rdquo; script which came
+with the Oracletool
+distribution. Edit the variables at the top of the script and run it by
+hand.
+It should display some raw HTML text, and SYSDATE, which was selected
+from your
+database. If this script works, then DBI and DBD::Oracle are installed
+and
+working correctly. Next, try running it as a CGI script from your web
+browser.
+If it does not work, look at your web server.s error log and try to
+determine
+the problem. You might also want to try logging in to the server as the
+same
+user that the web server runs as, and try executing the script </p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>If you are
+getting
+an error that looks similar to the following..</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="color: black;">Can't load
+'/usr/lib/perl5/site_perl/5.6.0/i386-linux/auto/DBD/Oracle/Oracle.so'
+for
+module DBD::Oracle: libclntsh.so.9.0: cannot open shared object file:
+No such
+file or directory at /usr/lib/perl5/5.6.0/i386-linux/DynaLoader.pm<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="color: black;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="color: black;"><span style="">&nbsp;&nbsp;
+</span>This is generally a permissions problem. Most likely your web
+server
+cannot access the libraries it needs to in order to load the
+DBD::Oracle
+module. Sometimes, on Linux, the full path to $ORACLE_HOME/lib (not the
+variable),
+needs to be added to the /etc/ld.so.conf file and then
+&ldquo;ldconfig&rdquo; run as root.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="color: black;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="color: black;"><span style="">&nbsp;&nbsp;
+</span>If you&rsquo;ve tried everything above, and are still having
+problems, gather
+up as much error information as you can and send it to me at <a
+ href="mailto:adam@oracletool.com">adam@oracletool.com</a>.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="color: black;"><o:p></o:p></span></p>
+<h2><a name="_Oracletool_and_security"></a>Oracletool and security</h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Web based
+applications are hard to secure. I&rsquo;ve made the best effort I can
+to make
+Oracletool secure by adding the option to encrypt the cookies that are
+stored
+on your PC, and transferred back and forth from Oracletool.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>I decided to
+provide some information about cookies because many people do not want
+to use a
+cookie based application, like Oracletool. Let me know if I have left
+anything
+out.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Q:_What_are"></a><span style="">&nbsp;&nbsp; </span>Q:
+What are cookies?</h2>
+<p class="MsoNormal"><b><span style="">&nbsp;&nbsp; </span>A</b>:
+Cookies
+are files that are stored on your PC. Your PC being the machine that
+you are
+running your browser on. When you start your browser it reads these
+files and
+puts the information in memory.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Q:_Where_do"></a><span style="">&nbsp;&nbsp; </span>Q:
+Where do they come from? </h2>
+<p class="MsoNormal"><b><span style="">&nbsp;&nbsp; </span>A</b>: They
+come from web servers, or sites. When you access a site, it will often
+write a
+cookie to your browser, which writes the file to your PC when you close
+the
+browser. By writing a cookie, the site can access it later, and that's
+how
+sites seem to know who you are when you return. It goes like this...</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>You access
+yahoo.com</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Yahoo.com
+askes
+you for your name.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>You type it in.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Yahoo.com
+sends a
+cookie to your browser with that information.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Your browser
+saves
+it. </p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>One week
+later,
+you access Yahoo.com again.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Yahoo.com
+reads the
+cookie, and knows who you are. It says &ldquo;Welcome back Mr.
+Smuckatelly</p>
+<p class="MsoNormal"></p>
+<h2><a name="_Q:_Are_cookies"></a><span style="">&nbsp;&nbsp; </span>Q:
+Are cookies secure?</h2>
+<p class="MsoNormal"><b><span style="">&nbsp;&nbsp; </span>A</b>: It
+depends on how they are used, and your views on security. Cookies can
+only be
+as secure as your PC. If someone walks up to your PC, starts your
+browser, and
+accesses Yahoo.com, the steps above occur and that person in
+essentially you
+now. Cookies are stored in text files, so they can be read by any text
+editor
+on your PC if you know where to look for them. In versions prior to
+1.05,
+Oracletool stored usernames and passwords in plain text which was very
+unsecure. These cookies can now be encrypted by adding a few Perl
+modules to
+your system. I feel that this is a very secure method of storing this
+information provided there is no security loopholes in your browser.
+Internet
+Explorer (4,5) has one such loophole. </p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>The
+description of
+the problem is at (As of May 26, 2000)</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span><a
+ href="http://peacefire.org/security/iecookies">http://peacefire.org/security/iecookies</a></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>and the fix is
+at <a
+ href="http://www.microsoft.com/technet/security/bulletin/ms00-033.asp">http://www.microsoft.com/technet/security/bulletin/ms00-033.asp</a></p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Keep in mind
+that
+not only do they have to have your information, they need to have
+access to
+your network. This means that most databases are already protected from
+everyone but your co-workers.</p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>If someone was
+to
+break into your computer and read your cookie file, a typical entry
+will look
+like this if you are using the Oracletool encryption...</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>toolbox.sessionid52616e646f6d4956d503c1af9bca21e8338a2a8786cc25f74fc098e88047fc3c</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>And will look
+like
+this if you are not...</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;
+</span>toolbox.sessionidsystem~manager</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>That's a big
+difference! I will always suggest using the encryption if possible. The
+only
+way that someone can decode the top string is if they know what type of
+encryption is being used, and if they know the encryption key, which is
+a
+parameter in the oracletool.ini that is set by the administrator.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Some people
+are
+extremely security concious, and will never trust a cookie based
+application.
+That's just the way it is. The fact is, your cookies are but one of
+many things
+that a malicous person will have access to if he or she breaks into
+your
+computer. I hope this has helped to explain how Oracletool protects
+your
+passwords.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Oracletool_cookie_encryption"></a><span style="">&nbsp;&nbsp;
+</span>Oracletool cookie encryption</h2>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Thanks
+to
+Richard Chen for code contributions pertaining to encryption</p>
+<p class="MsoNormal">========================================================</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>Usernames and
+passwords
+for the database instances you access can now be encrypted before they
+are sent
+to your PC as a cookie. These were being written in plain text prior to
+v1.2.0.
+There are 3 different levels of security available in Oracletool now.
+These
+levels will be enabled automatically depending on which Perl modules
+you have
+installed. To find out what level you are at, click on the "About"
+menu item after installing Oracletool. Here are the differences between
+the
+different levels, and the dependencies for each...</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Level_0:"></a><span style="">&nbsp;&nbsp; </span>Level 0:</h2>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>This
+is the
+level that Oracletool is at prior to v1.2.0.<span style="">&nbsp;
+</span>If you are at level 0 then there is no encryption of any kind
+taking
+place. If you do not have any of the modules discussed below installed,
+this
+will be your level. The cookie which stores the username and password
+for the
+databases you access will be stored in plain text on your PC.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Level_1:"></a><span style="">&nbsp;&nbsp; </span>Level 1:</h2>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>This
+level uses
+the MIME::Base64 method of encoding. With this level, the username,
+password,
+and encryption string are encoded into a single string. The encryption
+string
+is set in the oracletool.ini, and is MD5 encoded before being added to
+the
+string. This level requires the following Perl modules... These modules
+are
+available at CPAN (<a href="http://www.cpan.org/">http://www.cpan.org</a>)
+and
+Activestate (<a href="http://www.activestate.com/">http://www.activestate.com</a>)</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal">1) Digest-MD5</p>
+<p class="MsoNormal">2) Mime-Base64</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<h2><a name="_Level_2:"></a><span style="">&nbsp;&nbsp; </span>Level 2:</h2>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>This
+level uses
+the cipher block chaining mode with the IDEA or Blowfish block cipher,
+and is
+extremely secure. It encodes the username and password into a single
+encrypted
+string based on a keyword stored in the oracletool.ini. This level
+requires the
+following Perl modules... These modules are available at CPAN
+(http://www.cpan.org), but not all are on the Activestate site when I
+checked
+prior to this release. This is the only reason that Level 1 encryption
+exists
+at all. Oracletool defaults to the IDEA method. If you would like to
+use
+Blowfish, set the ENCRYPTION_METHOD parameter accordingly in the
+oracletool.ini.</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal">1) Digest-MD5</p>
+<p class="MsoNormal">2) Crypt-IDEA or Crypt-Blowfish</p>
+<p class="MsoNormal">3) Crypt-CBC</p>
+<p class="MsoNormal"><o:p></o:p></p>
+<p class="MsoNormal"><span style="">&nbsp;&nbsp; </span>If you choose
+to
+use these security features, simply install the required Perl modules.
+Oracletool will see the modules and start using them for each
+subsequent cookie
+that is created. See your browser documentation if you want to remove
+the
+cookies currently on your hard drive.</p>
+<p class="MsoNormal">__END__</p>
+<p class="MsoNormal" style=""><o:p></o:p></p>
+</div>
+</body>
+</html>
